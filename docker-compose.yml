@@ -1,13 +1,15 @@
 services:
   wg-easy:
-    environment:
-      - LANG=en
-      - WG_HOST=${WG_HOST}
-      - PASSWORD_HASH=${PASSWORD_HASH}
-      - PORT=51821
-      - WG_PORT=51820
-      - WG_DEFAULT_ADDRESS=10.8.x.x
-      - WG_DEVICE=eth0
+    env_file:
+      - .env
+    # environment:
+    # - LANG=en
+    # - WG_HOST=
+    # - PASSWORD_HASH=
+    # - PORT=51821
+    # - WG_PORT=51820
+    # - WG_DEFAULT_ADDRESS=10.8.x.x
+    # - WG_DEVICE=eth0
 
     build:
       dockerfile: ./Dockerfile
